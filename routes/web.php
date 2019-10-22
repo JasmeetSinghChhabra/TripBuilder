@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
 
 Route::get('/', function () {
     return view('blog.index');
@@ -34,7 +24,7 @@ Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('', function () {
         return view('admin.index');
     })->name('admin.index');
@@ -43,7 +33,7 @@ Route::group(['prefix' => 'admin'], function() {
         return view('admin.create');
     })->name('admin.create');
 
-    Route::post('create', function(\Illuminate\Http\Request $request, \Illuminate\Validation\Factory $validator) {
+    Route::post('create', function (\Illuminate\Http\Request $request, \Illuminate\Validation\Factory $validator) {
         $validation = $validator->make($request->all(), [
             'title' => 'required|min:5',
             'content' => 'required|min:10'
@@ -71,7 +61,7 @@ Route::group(['prefix' => 'admin'], function() {
         return view('admin.edit', ['post' => $post]);
     })->name('admin.edit');
 
-    Route::post('edit', function(\Illuminate\Http\Request $request, \Illuminate\Validation\Factory $validator) {
+    Route::post('edit', function (\Illuminate\Http\Request $request, \Illuminate\Validation\Factory $validator) {
         $validation = $validator->make($request->all(), [
             'title' => 'required|min:5',
             'content' => 'required|min:10'
