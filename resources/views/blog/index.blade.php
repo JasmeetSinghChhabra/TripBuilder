@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <p class="quote">The beautiful Laravel</p>
+            <p class="quote">The perfect Trip Advisor</p>
         </div>
     </div>
     @foreach($posts as $post)
