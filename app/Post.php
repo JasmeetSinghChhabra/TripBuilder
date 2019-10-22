@@ -1,9 +1,12 @@
 <?php
 
 namespace App;
+use Illuminate\Database\Eloquent\Model;
 
-class Post
+class Post extends Model
 {
+    protected $fillable = ['title', 'content'];
+
     public function getPosts($session)
     {
         if (!$session->has('posts')) {
@@ -15,7 +18,7 @@ class Post
     public function getPost($session, $id)
     {
         if (!$session->has('posts')) {
-            $this->createDummyData($session);
+            $this->createDummyData();
         }
         return $session->get('posts')[$id];
     }
@@ -23,7 +26,7 @@ class Post
     public function addPost($session, $title, $content)
     {
         if (!$session->has('posts')) {
-            $this->createDummyData($session);
+            $this->createDummyData();
         }
         $posts = $session->get('posts');
         array_push($posts, ['title' => $title, 'content' => $content]);
