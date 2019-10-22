@@ -7,7 +7,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">Blog</a>
-      <a class="nav-item nav-link" href="#">About</a>
+      <a class="nav-item nav-link" href="/about">About</a>
       <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </div>
   </div>
